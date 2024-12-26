@@ -1,0 +1,248 @@
+/* Base styles (for larger screens like desktops) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ff69b4; /* Pink color */
+    color: #333;
+}
+
+.header, footer {
+    display: flex;
+    align-items: center;
+    background-color: #9370DB; /* Light Blue color */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    justify-content: center; /* Center-align content horizontally */
+}
+
+.header h1, .footer p {
+    margin: 0;
+    color: #fff; /* Ensure header text is white for better visibility */
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header image */
+.header img {
+    width: 150px; /* Set width of the rectangular image */
+    height: 200px; /* Set height to create a rectangle shape */
+    margin-right: 20px; /* Space between the image and text */
+}
+
+.header p {
+    font-size: 16px;
+    margin: 5px 0 0 0;
+}
+
+/* Links inside header */
+.header a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+
+.header a i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.header a:hover {
+    color: #0077b5; /* Change color on hover for LinkedIn */
+}
+
+.header a:nth-child(2) i {
+    color: #333; /* For GitHub icon */
+}
+
+/* Heading Styles */
+h1, h2, h3 {
+    color: #ff69b4;  /* Pink color for headings */
+}
+
+a {
+    color: #ff69b4; /* Pink color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Section Styles */
+#summary, #education, #skills, #experience, #projects, #contact {
+    margin-bottom: 20px;
+    background: #add8e6; /* Light Blue color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#summary:hover, #education:hover, #skills:hover, #experience:hover, #projects:hover, #contact:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 15px;
+    padding: 0;
+}
+
+section {
+    margin: 20px 0;
+}
+
+/* Links in header */
+.header a {
+    color: white;
+}
+
+/* Skills container */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-box {
+    background: rgba(255, 105, 180, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 200px; /* Flex item properties to handle resizing */
+}
+.responsive-image {
+    max-width: 100%;   /* Image will scale to 100% of its container */
+    height: auto;      /* Maintains aspect ratio */
+    border-radius: 10px;  /* Rounded corners */
+}
+
+
+/* Media Queries for responsiveness */
+
+/* Mobile-first styles: apply these by default and then override with larger screens */
+@media (max-width: 768px) {
+.header {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center;
+    }
+.header img {
+    width: 150px; /* Set width of the rectangular image */
+    height: 200px; /* Set height to create a rectangle shape */
+    margin-right: 20px; /* Space between the image and text */
+}
+
+.container {
+        width: 90%; /* Use more width on smaller screens */
+    }
+
+.header a {
+        font-size: 16px;
+    }
+
+h1, h2, h3 {
+        font-size: 24px; /* Adjust heading sizes for mobile */
+    }
+
+#summary, #education, #skills, #experience, #projects, #contact {
+        padding: 15px; /* Reduce padding on mobile */
+    }
+
+.skills-container {
+        display: grid; /* Use grid layout for smaller screens */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Flexible grid columns */
+    }
+.responsive-image {
+        width: 100%;  /* Ensures the image is full width on small screens */
+    }
+}
+
+/* Tablet and below styles (for screens <= 768px) */
+@media (max-width: 768px) {
+.header {
+        padding: 10px;
+        flex-direction: column;
+    }
+.header img {
+    width: 150px; /* Set width of the rectangular image */
+    height: 200px; /* Set height to create a rectangle shape */
+    margin-right: 20px; /* Space between the image and text */
+}
+
+h1, h2, h3 {
+        font-size: 20px;
+    }
+
+.container {
+        width: 95%; /* Wider container on smaller screens */
+    }
+
+.skill-box {
+        flex: 1 1 150px; /* Adjust flex basis for smaller screens */
+    }
+
+#summary, #education, #skills, #experience, #projects, #contact {
+        padding: 10px; /* Smaller padding */
+    }
+.responsive-image {
+        width: 100%;  /* Ensures the image is full width on small screens */
+    }
+}
+
+/* Desktop Styles (larger screens >= 1024px) */
+@media (min-width: 1024px) {
+.header {
+        justify-content: flex-start; /* Align header content to the left on desktop */
+    }
+.header img {
+    width: 150px; /* Set width of the rectangular image */
+    height: 200px; /* Set height to create a rectangle shape */
+    margin-right: 20px; /* Space between the image and text */
+}
+ .container {
+        width: 80%; /* Default width for desktops */
+    }
+
+.skills-container {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+.skill-box {
+        flex: 1 1 200px;
+    }
+.responsive-image {
+        width: 100%;  /* Ensures the image is full width on small screens */
+    }
+}
